@@ -23,6 +23,10 @@ public class LinkedList implements Collection {
         return size;
     }
 
+//    public Element getFirst(){
+//        return first;
+//    }
+
     @Override
     public boolean isEmpty() {
 
@@ -45,7 +49,7 @@ public class LinkedList implements Collection {
 
     @Override
     public Iterator iterator() {
-        return null;
+        return new LinkedListIterator(first);
     }
 
     @Override
@@ -85,7 +89,13 @@ public class LinkedList implements Collection {
 
     @Override
     public boolean addAll(Collection c) {
-        return false;
+        if(c==null || c.isEmpty()){
+            return false;
+        }
+        for (Object o : c){
+            add(o);
+        }
+        return true;
     }
 
     @Override
@@ -132,13 +142,23 @@ public class LinkedList implements Collection {
 
     public static void main(String[] args) {
        LinkedList List1 = new LinkedList();
-        System.out.println(List1);
-        List1.add(2.5);
-        System.out.println(List1);
-        List1.add(2.5);
-        System.out.println(List1);
-        List1.add(null);
-        System.out.println(List1);
+//        System.out.println(List1);
+          List1.add(2.5);
+//        System.out.println(List1);
+          List1.add(3.5);
+
+          List1.add(null);
+//        System.out.println(List1);
+
+        Iterator iterator = List1.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
 
     }
+
+   // System.out.println(Integer.parseInt("123"));  //perevodit stroku v int
 }
+
+
