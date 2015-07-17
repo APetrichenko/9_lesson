@@ -143,16 +143,19 @@ public class LinkedList implements Collection {
     public static void main(String[] args) {
        LinkedList List1 = new LinkedList();
 //        System.out.println(List1);
-          List1.add(2.5);
-//        System.out.println(List1);
-          List1.add(3.5);
+//          List1.add(2.5);
+
 
           List1.add(null);
 //        System.out.println(List1);
 
-        Iterator iterator = List1.iterator();
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
+//        Iterator iterator = List1.iterator();
+//        while (iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
+
+        for (Object o : List1){
+            System.out.println(o);
         }
 
 
